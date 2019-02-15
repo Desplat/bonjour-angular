@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'bonjour-angular';
+  collegueTest: Collegue = {
+    pseudo: 'Matthieu',
+    score: 80,
+    photoUrl: 'maPhoto'
+  }
 }
