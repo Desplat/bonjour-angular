@@ -4,3 +4,8 @@ interface Collegue {
     score: number;
     photoUrl: string;
 }
+
+enum Avis {
+
+    AIMER, DETESTER
+}
