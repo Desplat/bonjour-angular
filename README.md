@@ -1,6 +1,9 @@
-# BonjourAngular
+# BonjourAngular [![Build Status](https://travis-ci.org/Desplat/bonjour-angular.svg?branch=master)](https://travis-ci.org/Desplat/bonjour-angular)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.1.
+
+##Site
+https://desplat.github.io/bonjour-angular/
 
 ## Development server
 
