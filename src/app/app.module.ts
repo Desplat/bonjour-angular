@@ -7,6 +7,9 @@ import { BonjourAvecPrenomComponent } from './bonjour-avec-prenom/bonjour-avec-p
 import { AvisComponent } from './avis/avis.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CollegueComponent } from './collegue/collegue.component';
+import { ListeColleguesComponentComponent } from './liste-collegues-component/liste-collegues-component.component';
+import { AccueilComponentComponent } from './accueil-component/accueil-component.component';
+import { ScorePipe } from './pipes/score.pipe';
 
 
 @NgModule({
@@ -15,7 +18,10 @@ import { CollegueComponent } from './collegue/collegue.component';
     BonjourComponent,
     BonjourAvecPrenomComponent,
     AvisComponent,
-    CollegueComponent
+    CollegueComponent,
+    ListeColleguesComponentComponent,
+    AccueilComponentComponent,
+    ScorePipe
   ],
   imports: [
     NgbModule,

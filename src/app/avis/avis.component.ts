@@ -14,13 +14,11 @@ export class AvisComponent implements OnInit {
 
   clicAime() {
 
-    console.log("J'aime");
     this.avis.emit(Avis.AIMER);
   }
 
   clicDeteste() {
 
-    console.log("Je déteste");
     this.avis.emit(Avis.DETESTER);
   }
 

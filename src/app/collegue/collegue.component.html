@@ -1,20 +1,6 @@
-<div class="container">
-  <div class="row align-items-center">
-    <div class="col-md-12">
-      <img src={{collegue.photoUrl}}>
-    </div>
-  </div>
-
-  <div class="row align-items-center">
-    <div class="col-md-3">
-      <p>{{collegue.pseudo}}</p>
-    </div>
-    <div class="col-md-3">
-      <p>{{collegue.score}}</p>
-    </div>
-  </div>
-
-  <div class="row align-items-center">
-    <app-avis (avis)="onVoted($event)" [btnLikeActif]="likeActif" [btnUnlikeActif]="unlikeActif"></app-avis>
-  </div>
-</div>
+<p>
+  <img id="photo" [src]="collegue.photoUrl">
+</p>
+<h3>{{collegue.pseudo | uppercase}} : {{collegue.score| score}}</h3>
+<h3></h3>
+<app-avis (avis)="onVoted($event)" [btnLikeActif]="likeActif" [btnUnlikeActif]="unlikeActif"></app-avis>
