@@ -1,11 +1,11 @@
-interface Collegue {
+export interface Collegue {
 
     pseudo: string;
     score: number;
     photoUrl: string;
 }
 
-enum Avis {
+export enum Avis {
 
     AIMER, DETESTER
 }

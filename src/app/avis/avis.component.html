@@ -1,2 +1,2 @@
-<button class="btn btn-success">J'aime</button>
-<button class="btn btn-danger">Je déteste</button>
+<button class="btn-success" (click)="clicAime()" [disabled]="!btnLikeActif">J'aime</button>
+<button class="btn-danger" (click)="clicDeteste()" [disabled]="!btnUnlikeActif">Je déteste</button>

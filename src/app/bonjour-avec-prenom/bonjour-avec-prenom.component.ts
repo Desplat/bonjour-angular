@@ -11,7 +11,7 @@ export class BonjourAvecPrenomComponent implements OnInit {
   @Input() prenom: string; // ajout d'une propriété
 
   constructor() {
-    this.prenom = 'Matthieu'; // valorisation de la propriété
+    this.prenom = 'Fidèle'; // valorisation de la propriété
   }
 
   ngOnInit() {

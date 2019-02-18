@@ -15,6 +15,6 @@
   </div>
 
   <div class="row align-items-center">
-    <app-avis></app-avis>
+    <app-avis (avis)="onVoted($event)" [btnLikeActif]="likeActif" [btnUnlikeActif]="unlikeActif"></app-avis>
   </div>
 </div>
