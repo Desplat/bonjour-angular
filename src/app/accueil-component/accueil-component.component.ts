@@ -17,7 +17,8 @@ export class AccueilComponentComponent implements OnInit {
     { pseudo: 'Tesla', score: 0, photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJnLEDDQqYNO-0jJWbh3Wc_H_s9SZM0WIkG2zQ9WhBeLq0cNeZ' },
     { pseudo: 'Copernic', score: 0, photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3JvmSzV0HzHDzXDer8d2Q5ezL-RpXjZPyobPkrrxmQHvMsjpiVw' },
     { pseudo: 'Montaigne', score: 0, photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDbeDsnlM5arL43Ec9GC-3qEVyiZ3h95YdaXDqkGwNdnDU05ru0g' },
-    { pseudo: 'Diderot', score: 0, photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRH4PBI5sc8ZT-6Pfq6BP0rRApfSTCGV_qurI7BlfYtgL9ZkX3' }
+    { pseudo: 'Diderot', score: 0, photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRH4PBI5sc8ZT-6Pfq6BP0rRApfSTCGV_qurI7BlfYtgL9ZkX3' },
+    { pseudo: 'Voltaire', score: 0, photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC0so4NFEBZj7E-0JKQQbqwWDDwVpJnRBxMiPMiqCnvTpuSNM3sg' }
   ]
 
   clicRafraichir() {

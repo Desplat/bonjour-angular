@@ -11,30 +11,30 @@ export class ListeColleguesComponentComponent implements OnInit {
   @Input() listCollegues: Collegue[];
   debut: number = 0;
   fin: number = 3;
-  focus: number = 1;
+  nbrButton: number;
+  tabButton = [];
 
-  clic1() {
-
-    this.debut = 0;
-    this.fin = 3;
-    this.focus = 1;
+  clic1(nb: number) {
+    console.log(nb)
+    this.debut = 3 * nb;
+    this.fin = 3 + 3 * nb;
   }
 
-  clic2() {
-    this.debut = 3;
-    this.fin = 6;
-    this.focus = 2;
-  }
+  remplirTab(nbr: number) {
 
-  clic3() {
-    this.debut = 6;
-    this.fin = 9;
-    this.focus = 3;
+    for (let i = 0; i < nbr; i++) {
+      this.tabButton.push(i);
+    }
   }
 
   constructor() { }
 
   ngOnInit() {
+    this.nbrButton = Math.floor(this.listCollegues.length / 3);
+    if (this.listCollegues.length % 3 != 0 || this.nbrButton === 0) {
+      this.nbrButton += 1;
+    }
+    this.remplirTab(this.nbrButton);
   }
 
 }
