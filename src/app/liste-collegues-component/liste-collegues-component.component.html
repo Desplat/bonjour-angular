@@ -1,7 +1,10 @@
 <div class="container">
   <div class="row">
-    <div class="col-4" *ngFor="let coll of listCollegues">
+    <div class="col-4" *ngFor="let coll of listCollegues | slice:debut:fin">
       <app-collegue [collegue]="coll"></app-collegue>
     </div>
   </div>
+  <button class="btn" (click)="clic1()">1</button>
+  <button class="btn" (click)="clic2()">2</button>
+  <button class="btn" (click)="clic3()">3</button>
 </div>
