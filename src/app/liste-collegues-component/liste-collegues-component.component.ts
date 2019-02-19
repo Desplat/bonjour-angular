@@ -14,7 +14,7 @@ export class ListeColleguesComponentComponent implements OnInit {
   nbrButton: number;
   tabButton = [];
 
-  clic1(nb: number) {
+  clic(nb: number) {
     console.log(nb)
     this.debut = 3 * nb;
     this.fin = 3 + 3 * nb;

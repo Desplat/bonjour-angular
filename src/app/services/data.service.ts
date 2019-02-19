@@ -20,13 +20,7 @@ export class DataService {
     { pseudo: 'Voltaire', score: 0, photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC0so4NFEBZj7E-0JKQQbqwWDDwVpJnRBxMiPMiqCnvTpuSNM3sg' }
   ];
 
-  listeVotes: Vote[] = [
-    { collegue: this.listeCollegues[0], avis: Avis.AIMER },
-    { collegue: this.listeCollegues[1], avis: Avis.DETESTER },
-    { collegue: this.listeCollegues[2], avis: Avis.AIMER },
-    { collegue: this.listeCollegues[3], avis: Avis.AIMER },
-    { collegue: this.listeCollegues[4], avis: Avis.DETESTER }
-  ];
+  listeVotes: Vote[] = [];
 
   constructor() { }
 
@@ -44,11 +38,17 @@ export class DataService {
     } else {
       collegue.score -= 1;
     }
+    this.ajoutVote(collegue, avis);
     return collegue;
   }
 
   listerVotes(): Vote[] {
     // TODO retourner la liste des votes.
     return this.listeVotes;
+  }
+
+  ajoutVote(coll: Collegue, avi: Avis) {
+
+    this.listeVotes.push({ collegue: coll, avis: avi });
   }
 }
