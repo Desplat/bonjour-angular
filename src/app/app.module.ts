@@ -10,6 +10,7 @@ import { CollegueComponent } from './collegue/collegue.component';
 import { ListeColleguesComponentComponent } from './liste-collegues-component/liste-collegues-component.component';
 import { AccueilComponentComponent } from './accueil-component/accueil-component.component';
 import { ScorePipe } from './pipes/score.pipe';
+import { HistoriqueVotesComponent } from './historique-votes/historique-votes.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ScorePipe } from './pipes/score.pipe';
     CollegueComponent,
     ListeColleguesComponentComponent,
     AccueilComponentComponent,
-    ScorePipe
+    ScorePipe,
+    HistoriqueVotesComponent
   ],
   imports: [
     NgbModule,

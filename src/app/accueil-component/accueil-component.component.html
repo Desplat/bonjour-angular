@@ -1,2 +1,9 @@
 <button class="btn-primary" (click)="clicRafraichir()">Rafraichir la liste</button>
-<app-liste-collegues-component [listCollegues]="listCol"></app-liste-collegues-component>
+<div class=row>
+    <div class=col-6>
+        <app-liste-collegues-component [listCollegues]="listCol"></app-liste-collegues-component>
+    </div>
+    <div class=col-6>
+        <app-historique-votes></app-historique-votes>
+    </div>
+</div>
