@@ -1,6 +1,9 @@
-<div class="container">
+<div class="container" style="width: 200%; background-color: rgba(0,0,255,.1)">
   <div class="row">
-    <div class="col-4" *ngFor="let coll of listCollegues | slice:debut:fin">
+    <div><br></div>
+  </div>
+  <div class="row">
+    <div class="col" *ngFor="let coll of listCollegues | slice:debut:fin">
       <app-collegue [collegue]="coll"></app-collegue>
     </div>
   </div>

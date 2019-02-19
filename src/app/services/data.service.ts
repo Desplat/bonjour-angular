@@ -47,8 +47,8 @@ export class DataService {
     return this.listeVotes;
   }
 
-  ajoutVote(coll: Collegue, avi: Avis) {
+  ajoutVote(collegue: Collegue, avis: Avis) {
 
-    this.listeVotes.push({ collegue: coll, avis: avi });
+    this.listeVotes.push({ collegue, avis });
   }
 }
