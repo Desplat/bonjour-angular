@@ -11,7 +11,6 @@ import { ListeColleguesComponentComponent } from './liste-collegues-component/li
 import { AccueilComponentComponent } from './accueil-component/accueil-component.component';
 import { ScorePipe } from './pipes/score.pipe';
 import { HistoriqueVotesComponent } from './historique-votes/historique-votes.component';
-import { VoteEffectueComponent } from './vote-effectue/vote-effectue.component';
 import { CompteurVotesComponent } from './compteur-votes/compteur-votes.component';
 
 
@@ -26,7 +25,6 @@ import { CompteurVotesComponent } from './compteur-votes/compteur-votes.componen
     AccueilComponentComponent,
     ScorePipe,
     HistoriqueVotesComponent,
-    VoteEffectueComponent,
     CompteurVotesComponent
   ],
   imports: [
