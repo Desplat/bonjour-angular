@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Vote, Avis } from '../models';
 import { DataService } from '../services/data.service';
 
@@ -11,21 +11,19 @@ export class HistoriqueVotesComponent implements OnInit {
 
   Avis = Avis;
 
-  listVotes: Vote[];
+  listVotes: Vote[] = [];
 
 
-  clicSuppr(vote: Vote) {
-    let x: number = this.listVotes.findIndex(i => i == vote);
-    this._srv.supprimerVote(this.listVotes[x]);
-    this.listVotes.splice(x, 1);
+  clicSuppr(i: number) {
+    //let x: number = this.listVotes.findIndex(i => i == vote);
+    this.listVotes.splice(i, 1);
   }
 
   constructor(private _srv: DataService) { }
 
   ngOnInit() {
-    this._srv.listerVotes().subscribe(
-      value => this.listVotes = value
+    this._srv.votesObs.subscribe(
+      value => this.listVotes.push(value)
     )
   }
-
 }

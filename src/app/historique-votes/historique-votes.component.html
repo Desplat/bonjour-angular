@@ -1,6 +1,6 @@
 <div id="histo" class="container" style="width: 50%; background-color: rgba(0,0,255,.1)">
   <h1>Historique</h1>
-  <div class="row" *ngFor="let vote of listVotes">
+  <div class="row" *ngFor="let vote of listVotes; index as i">
     <div class="col">
       <p>
         <img id=" photo" [src]="vote.collegue.photoUrl" class="rounded" height="auto" width="200">
@@ -10,7 +10,7 @@
       <div><b>{{vote.collegue.pseudo | uppercase}}</b></div>
       <div>{{vote.collegue.pseudo | uppercase}} est {{vote.avis == Avis.AIMER ? 'aimé' : 'détesté'}}, il a désormais un
         score de {{vote.collegue.score}}</div>
-      <button class="btn-secondary" (click)="clicSuppr(vote)">Supprimer</button>
+      <button class="btn-secondary" (click)="clicSuppr(i)">Supprimer</button>
     </div>
   </div>
 </div>

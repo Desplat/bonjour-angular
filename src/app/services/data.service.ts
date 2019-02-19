@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output } from '@angular/core';
 import { Collegue, Avis, Vote } from '../models';
 import { Observable, from, Subject, of } from 'rxjs';
 
@@ -7,10 +7,10 @@ import { Observable, from, Subject, of } from 'rxjs';
 })
 export class DataService {
 
-  private voteSupprimeSub = new Subject<Vote>();
+  private votesSub = new Subject<Vote>();
 
-  get voteSupprimeObs() {
-    return this.voteSupprimeSub;
+  get votesObs() {
+    return this.votesSub;
   }
 
   // TODO alimenter la liste de collègues
@@ -26,8 +26,6 @@ export class DataService {
     { pseudo: 'Diderot', score: 0, photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRH4PBI5sc8ZT-6Pfq6BP0rRApfSTCGV_qurI7BlfYtgL9ZkX3' },
     { pseudo: 'Voltaire', score: 0, photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC0so4NFEBZj7E-0JKQQbqwWDDwVpJnRBxMiPMiqCnvTpuSNM3sg' }
   ];
-
-  listeVotes: Vote[] = [];
 
   constructor() { }
 
@@ -46,22 +44,7 @@ export class DataService {
     } else {
       newCollegue.score -= 1;
     }
-    this.ajoutVote(newCollegue, avis);
+    this.votesSub.next({ collegue: newCollegue, avis });
     return of(newCollegue);
-  }
-
-  listerVotes(): Observable<Vote[]> {
-    // TODO retourner la liste des votes.
-    return of(this.listeVotes);
-  }
-
-  ajoutVote(collegue: Collegue, avis: Avis) {
-
-    this.listeVotes.push({ collegue, avis });
-  }
-
-  supprimerVote(v: Vote) {
-    // emission du vote supprimé
-    this.voteSupprimeSub.next(v);
   }
 }
