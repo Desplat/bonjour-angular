@@ -13,7 +13,7 @@ export class VoteEffectueComponent implements OnInit {
 
   ngOnInit() {
 
-    this._srv.voteSupprimeObs.subscribe(
+    this._srv.votesObs.subscribe(
       voteSupprime => {
         this.msg = `Un vote a été supprimé. collegue = ${voteSupprime.collegue.pseudo}, avis= ${voteSupprime.avis}`;
       },
