@@ -11,16 +11,21 @@ export class HistoriqueVotesComponent implements OnInit {
 
   Avis = Avis;
 
-  listVotes: Vote[] = this._srv.listerVotes();
+  listVotes: Vote[];
+
 
   clicSuppr(vote: Vote) {
     let x: number = this.listVotes.findIndex(i => i == vote);
+    this._srv.supprimerVote(this.listVotes[x]);
     this.listVotes.splice(x, 1);
   }
 
   constructor(private _srv: DataService) { }
 
   ngOnInit() {
+    this._srv.listerVotes().subscribe(
+      value => this.listVotes = value
+    )
   }
 
 }

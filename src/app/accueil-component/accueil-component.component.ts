@@ -9,7 +9,7 @@ import { DataService } from '../services/data.service';
 })
 export class AccueilComponentComponent implements OnInit {
 
-  listCol: Collegue[] = this._srv.lister();
+  listCol: Collegue[];
 
   clicRafraichir() {
 
@@ -17,6 +17,9 @@ export class AccueilComponentComponent implements OnInit {
   constructor(private _srv: DataService) { }
 
   ngOnInit() {
-  }
 
+    this._srv.lister().subscribe(
+      value => this.listCol = value
+    )
+  }
 }

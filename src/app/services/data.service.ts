@@ -1,10 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Collegue, Avis, Vote } from '../models';
+import { Observable, from, Subject, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
+
+  private voteSupprimeSub = new Subject<Vote>();
+
+  get voteSupprimeObs() {
+    return this.voteSupprimeSub;
+  }
 
   // TODO alimenter la liste de collègues
   listeCollegues: Collegue[] = [
@@ -24,31 +31,37 @@ export class DataService {
 
   constructor() { }
 
-  lister(): Collegue[] {
+  lister(): Observable<Collegue[]> {
 
     // TODO retourner une liste fictives de collègues
-    return this.listeCollegues;
+    return of(this.listeCollegues);
   }
 
-  donnerUnAvis(collegue: Collegue, avis: Avis): Collegue {
+  donnerUnAvis(collegue: Collegue, avis: Avis): Observable<Collegue> {
 
-    // TODO mettre à jour le score du collègue et retourner le collègue à jour
+    const newCollegue = { ...collegue };
+    // mettre à jour le score du collègue et retourner le collègue à jour
     if (avis == Avis.AIMER) {
-      collegue.score += 1;
+      newCollegue.score += 1;
     } else {
-      collegue.score -= 1;
+      newCollegue.score -= 1;
     }
-    this.ajoutVote(collegue, avis);
-    return collegue;
+    this.ajoutVote(newCollegue, avis);
+    return of(newCollegue);
   }
 
-  listerVotes(): Vote[] {
+  listerVotes(): Observable<Vote[]> {
     // TODO retourner la liste des votes.
-    return this.listeVotes;
+    return of(this.listeVotes);
   }
 
   ajoutVote(collegue: Collegue, avis: Avis) {
 
     this.listeVotes.push({ collegue, avis });
+  }
+
+  supprimerVote(v: Vote) {
+    // emission du vote supprimé
+    this.voteSupprimeSub.next(v);
   }
 }
