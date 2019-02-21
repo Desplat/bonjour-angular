@@ -1,3 +1,6 @@
-#cadre{
+#cadre {
     border: 2px black solid
+}
+ngb-pagination {
+    margin: 100px;
 }

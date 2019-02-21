@@ -13,7 +13,11 @@ export class AccueilComponentComponent implements OnInit {
 
   clicRafraichir() {
 
+    this._srv.rafraichir().subscribe(
+      value => this.listCol = value
+    )
   }
+
   constructor(private _srv: DataService) { }
 
   ngOnInit() {

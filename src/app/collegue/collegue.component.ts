@@ -24,8 +24,8 @@ export class CollegueComponent implements OnInit {
 
   gererActivationButton() {
 
-    this.likeActif = this.collegue.score < 10;
-    this.unlikeActif = this.collegue.score > -10;
+    this.likeActif = this.collegue.score < 100;
+    this.unlikeActif = this.collegue.score > -100;
   }
 
   constructor(private _srv: DataService) { }
