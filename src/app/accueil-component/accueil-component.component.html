@@ -1,3 +1,4 @@
+<app-nouveau-collegue-template-form></app-nouveau-collegue-template-form>
 <button class="btn-primary" (click)="clicRafraichir()">Rafraichir la liste</button>
 <app-compteur-votes></app-compteur-votes>
 <div><br></div>
@@ -6,7 +7,7 @@
         <app-liste-collegues-component *ngIf="listCol" [listCollegues]="listCol">
         </app-liste-collegues-component>
     </div>
-    <div class=col-4>
+    <div class=col-3 id="histo">
         <app-historique-votes></app-historique-votes>
     </div>
 </div>

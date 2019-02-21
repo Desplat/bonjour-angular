@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Collegue, Avis, Vote } from '../models';
+import { Collegue, Avis, Vote, ModelCollegue } from '../models';
 import { Observable, from, Subject, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -74,5 +74,15 @@ export class DataService {
       `${URL_BACKEND}/collegues/${collegue.pseudo}`, `{ "action" : "${avis}" }`, httpOptions).pipe(
         tap(value => this.votesSub.next({ collegue: value, avis }))
       )
+  }
+
+  ajoutCollegue(modelCollegue: ModelCollegue) {
+
+    this._http.post<Collegue>(`${URL_BACKEND}/collegues`,
+      `{
+        "matricule" : ${modelCollegue.matricule},
+        "pseudo": ${modelCollegue.pseudo},
+        "urlImage" : ${modelCollegue.photo}
+      }`, httpOptions)
   }
 }

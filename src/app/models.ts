@@ -15,3 +15,9 @@ export interface Vote {
     collegue: Collegue;
     avis: Avis;
 }
+
+export class ModelCollegue {
+    matricule: string;
+    pseudo: string;
+    photo: string;
+}

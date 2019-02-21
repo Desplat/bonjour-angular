@@ -1,6 +1,6 @@
-<div id="histo" class="container" style="width: 50%; background-color: rgba(0,0,255,.1)">
+<div id="histo" class="container" style="background-color: rgba(0,0,255,.1)">
   <h1>Historique</h1>
-  <div class="row" *ngFor="let vote of listVotes; index as i">
+  <div id="ligne" class="row" *ngFor="let vote of listVotes; index as i">
     <div class="col">
       <p>
         <img id=" photo" [src]="vote.collegue.photoUrl" class="rounded" height="auto" width="200">

@@ -1,3 +1,7 @@
-#histo{
+#histo {
     border: 2px black solid
+}
+
+#ligne {
+    padding-bottom: 15px
 }
