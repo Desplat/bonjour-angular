@@ -3,7 +3,7 @@
 <div><br></div>
 <div class=row>
     <div class=col-8>
-        <app-liste-collegues-component [listCollegues]="listCol">
+        <app-liste-collegues-component *ngIf="listCol" [listCollegues]="listCol">
         </app-liste-collegues-component>
     </div>
     <div class=col-4>
