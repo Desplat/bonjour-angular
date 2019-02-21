@@ -67,11 +67,12 @@ export class DataService {
 
   donnerUnAvis(collegue: Collegue, avis: Avis): Observable<Collegue> {
 
-    const newCollegue = { ...collegue };
+    //const newCollegue = { ...collegue };
     // mettre à jour le score du collègue et retourner le collègue à jour
-    this.votesSub.next({ collegue: newCollegue, avis });
 
     return this._http.patch<Collegue>(
-      `${URL_BACKEND}/collegues/${collegue.pseudo}`, `{ "action" : "${avis}" }`, httpOptions)
+      `${URL_BACKEND}/collegues/${collegue.pseudo}`, `{ "action" : "${avis}" }`, httpOptions).pipe(
+        tap(value => this.votesSub.next({ collegue: value, avis }))
+      )
   }
 }
