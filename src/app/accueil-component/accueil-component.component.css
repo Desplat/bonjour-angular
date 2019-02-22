@@ -3,3 +3,7 @@
     height: 85vh;
     padding-left: 1rem;
 }
+
+button {
+    margin-left: 2ch;
+}

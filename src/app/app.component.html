@@ -1,18 +1,13 @@
 <header>
-    <nav class="navbar navbar-default">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a routerLink="/accueil">Accueil</a>
-
-            </li>
-            <li class="nav-item active">
-                <a routerLink="/form">Formulaire</a>
-            </li>
-        </ul>
+    <nav class="navbar navbar-default d-flex justify-content-start">
+        <a routerLink="/accueil" routerLinkActive="active-link">Accueil</a>
+        <a routerLink="/form" routerLinkActive="active-link">Formulaire</a>
     </nav>
 </header>
 
-<h1>Application Employé Du Mois</h1>
+<body>
+    <h1>Application Employé Du Mois</h1>
 
-<router-outlet></router-outlet>
+    <router-outlet></router-outlet>
+</body>
 <!--app-accueil-component></app-accueil-component-->

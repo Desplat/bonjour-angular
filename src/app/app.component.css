@@ -1,0 +1,19 @@
+body {
+    background-color: lightgray;
+}
+
+header {
+    background-color: darkgray;
+}
+
+a {
+    margin: 1ch;
+}
+
+.active-link{
+    color: rgb(0, 47, 255);
+}
+
+h1 {
+    padding: 1ch;
+}
