@@ -77,18 +77,9 @@ export class DataService {
       )
   }
 
-  ajoutCollegue(modelCollegue: ModelCollegue) {
+  ajoutCollegue(modelCollegue: ModelCollegue): Observable<Collegue> {
 
-    this._http.post<Collegue>(`${URL_BACKEND}/collegues`,
-      modelCollegue, httpOptions)
-      .subscribe(
-        data => {
-          this._router.navigate(['/accueil']);
-          this.rafraichir();
-        },
-        error => {
-          console.log('an error occured');
-
-        })
+    return this._http.post<Collegue>(`${URL_BACKEND}/collegues`,
+      modelCollegue, httpOptions);
   }
 }

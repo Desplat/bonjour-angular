@@ -3,7 +3,9 @@ node_js:
   - "9"
 before_script:
   - npm install
-script: npm run build
+script:
+  - npm run build
+  - cp d
 deploy:
   local-dir: dist/bonjour-angular
   provider: pages

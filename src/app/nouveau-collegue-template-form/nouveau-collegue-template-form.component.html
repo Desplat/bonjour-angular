@@ -15,4 +15,7 @@
       <button (click)="valider()" [disabled]="monForm.invalid">Ajouter</button>
     </form>
   </div>
+  <div *ngIf="collegueNotFound" class="text-danger">Le collegue que vous avez indiqué n'existe pas dans notre base de
+    données !
+  </div>
 </div>
