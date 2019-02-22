@@ -15,7 +15,8 @@ import { CompteurVotesComponent } from './compteur-votes/compteur-votes.componen
 import { HttpClientModule } from '@angular/common/http';
 import { NouveauCollegueTemplateFormComponent } from './nouveau-collegue-template-form/nouveau-collegue-template-form.component';
 import { FormsModule } from '@angular/forms';
-
+import { ROUTES } from './app.routes'
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { FormsModule } from '@angular/forms';
     NgbModule,
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(ROUTES)
   ],
   providers: [],
   bootstrap: [AppComponent]

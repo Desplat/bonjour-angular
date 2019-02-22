@@ -1,6 +1,7 @@
 <div class=container>
+  <h3>Ajouter un de vos collegues</h3>
   <div class=row>
-    <form (ngSubmit)="submit()" #monForm="ngForm">
+    <form #monForm="ngForm">
 
       <label>Matricule</label>
       <input [(ngModel)]="modelCollegue.matricule" name="matricule" required>
@@ -9,7 +10,7 @@
       <input [(ngModel)]="modelCollegue.pseudo" name="pseudo" required minlength="2">
 
       <label>URL image</label>
-      <input [(ngModel)]="modelCollegue.url" name="photo">
+      <input [(ngModel)]="modelCollegue.urlImage" name="urlImage">
 
       <button (click)="valider()" [disabled]="monForm.invalid">Ajouter</button>
     </form>

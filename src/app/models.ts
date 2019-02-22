@@ -19,5 +19,5 @@ export interface Vote {
 export class ModelCollegue {
     matricule: string;
     pseudo: string;
-    photo: string;
+    urlImage: string;
 }

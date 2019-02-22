@@ -4,6 +4,7 @@ import { Observable, from, Subject, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
+import { RouterModule, Routes, ActivatedRoute, Router } from '@angular/router';
 
 const URL_BACKEND = environment.backendUrl;
 
@@ -27,7 +28,7 @@ export class DataService {
   // alimenter la liste de collègues
   listeCollegues: Collegue[] = [];
 
-  constructor(private _http: HttpClient) { }
+  constructor(private _http: HttpClient, private _router: Router) { }
 
   lister(): Observable<Collegue[]> {
 
@@ -79,10 +80,15 @@ export class DataService {
   ajoutCollegue(modelCollegue: ModelCollegue) {
 
     this._http.post<Collegue>(`${URL_BACKEND}/collegues`,
-      `{
-        "matricule" : ${modelCollegue.matricule},
-        "pseudo": ${modelCollegue.pseudo},
-        "urlImage" : ${modelCollegue.photo}
-      }`, httpOptions)
+      modelCollegue, httpOptions)
+      .subscribe(
+        data => {
+          this._router.navigate(['/accueil']);
+          this.rafraichir();
+        },
+        error => {
+          console.log('an error occured');
+
+        })
   }
 }

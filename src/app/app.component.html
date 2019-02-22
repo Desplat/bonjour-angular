@@ -1,5 +1,18 @@
+<header>
+    <nav class="navbar navbar-default">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a routerLink="/accueil">Accueil</a>
+
+            </li>
+            <li class="nav-item active">
+                <a routerLink="/form">Formulaire</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
 <h1>Application Employé Du Mois</h1>
 
-<!--app-collegue [collegue]="collegueTest"></app-collegue-->
-<!--app-liste-collegues-component [listCollegues]="listCol"></app-liste-collegues-component-->
-<app-accueil-component></app-accueil-component>
+<router-outlet></router-outlet>
+<!--app-accueil-component></app-accueil-component-->
